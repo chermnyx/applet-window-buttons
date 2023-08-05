@@ -74,7 +74,11 @@ public:
     QString caption() const override;
     WId decorationId() const override;
     WId windowId() const override;
+#if KDECORATION2_VERSION_MINOR <= 24
+    QString windowClass() const;
+#else
     QString windowClass() const override;
+#endif
     int desktop() const override;
     QIcon icon() const override;
     bool isActive() const override;
